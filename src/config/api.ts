@@ -1,8 +1,8 @@
 // API Configuration
 const getApiBaseUrl = () => {
-  // If running in production, use production URL
+  // If running in production, use relative path since frontend and backend are served from same domain
   if (import.meta.env.PROD) {
-    return 'https://your-new-server.onrender.com/api';
+    return '/api';
   }
   
   // If VITE_API_URL is set, use it
