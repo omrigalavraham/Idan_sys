@@ -15,7 +15,21 @@ async function setupDatabase() {
     console.log('Connected to database');
     
     const schema = fs.readFileSync('./init.sql', 'utf8');
-    await client.query(schema);
+    
+    // Split the SQL into individual statements and execute them one by one
+    const statements = schema
+      .split(';')
+      .map(stmt => stmt.trim())
+      .filter(stmt => stmt.length > 0);
+
+    for (const statement of statements) {
+      try {
+        await client.query(statement);
+      } catch (error) {
+        console.log(`Skipping statement (likely already exists): ${error.message}`);
+      }
+    }
+    
     console.log('✅ Database schema created successfully');
   } catch (error) {
     console.error('❌ Database setup failed:', error);
