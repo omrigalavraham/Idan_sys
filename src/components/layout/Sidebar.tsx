@@ -16,7 +16,7 @@ import {
   X
 } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../hooks/useAuth';
+import useAuthStore from '../../store/authStore'; // שונה מ useAuth
 
 interface SidebarProps {
   isOpen: boolean;
@@ -26,7 +26,7 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { user, logout } = useAuth();
+  const { user, logout } = useAuthStore(); // השתמש ב useAuthStore
 
   const menuItems = [
     { path: '/', icon: Home, label: 'דף הבית' },
