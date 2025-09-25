@@ -43,15 +43,16 @@ npx tsx test-db-connection.ts
 
 ## הגדרות מסד נתונים
 
-הפרויקט מוגדר לעבוד עם מסד נתונים מקומי. הקובץ `.env` מכיל את ההגדרות:
+הפרויקט מוגדר לעבוד עם מסד נתונים בענן. הקובץ `.env` מכיל את ההגדרות:
 
 ```env
-LOCAL_DATABASE_URL=postgresql://idan:0526689225@localhost:5432/crm_db
-DB_HOST=localhost
+LOCAL_DATABASE_URL=postgresql://idan_db_user:mh0krwitmNICFu41ugy7MZjclrmnwp3M@dpg-d3antq7fte5s73dgjgl0-a.frankfurt-postgres.render.com/idan_db?sslmode=require
+DATABASE_URL=postgresql://idan_db_user:mh0krwitmNICFu41ugy7MZjclrmnwp3M@dpg-d3antq7fte5s73dgjgl0-a.frankfurt-postgres.render.com/idan_db?sslmode=require
+DB_HOST=dpg-d3antq7fte5s73dgjgl0-a.frankfurt-postgres.render.com
 DB_PORT=5432
-DB_NAME=crm_db
-DB_USER=idan
-DB_PASSWORD=0526689225
+DB_NAME=idan_db
+DB_USER=idan_db_user
+DB_PASSWORD=mh0krwitmNICFu41ugy7MZjclrmnwp3M
 ```
 
 ### מעבר למסד נתונים בענן

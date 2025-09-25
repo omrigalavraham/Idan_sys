@@ -9,10 +9,10 @@ dotenv.config();
   console.log('📊 Database config:');
   console.log(`   DATABASE_URL: ${process.env.DATABASE_URL ? 'Set' : 'Not set'}`);
   console.log(`   LOCAL_DATABASE_URL: ${process.env.LOCAL_DATABASE_URL ? 'Set' : 'Not set'}`);
-  console.log(`   Host: ${process.env.DB_HOST || 'localhost'}`);
+  console.log(`   Host: ${process.env.DB_HOST || 'dpg-d3antq7fte5s73dgjgl0-a.frankfurt-postgres.render.com'}`);
   console.log(`   Port: ${process.env.DB_PORT || '5432'}`);
-  console.log(`   Database: ${process.env.DB_NAME || 'crm_db'}`);
-  console.log(`   User: ${process.env.DB_USER || 'idan'}`);
+  console.log(`   Database: ${process.env.DB_NAME || 'idan_db'}`);
+  console.log(`   User: ${process.env.DB_USER || 'idan_db_user'}`);
   console.log('');
 
   try {

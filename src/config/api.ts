@@ -2,7 +2,7 @@
 const getApiBaseUrl = () => {
   // If running in production, use production URL
   if (import.meta.env.PROD) {
-    return 'https://avraham-tikshoret.onrender.com/api';
+    return 'https://your-new-server.onrender.com/api';
   }
   
   // If VITE_API_URL is set, use it

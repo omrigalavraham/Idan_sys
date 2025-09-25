@@ -7,8 +7,8 @@ const { Pool } = pkg;
 
 // חיבור ל-DB המקומי
 const localPool = new Pool({
-  connectionString: process.env.LOCAL_DATABASE_URL,
-  ssl: false,
+  connectionString: 'postgresql://idan_db_user:mh0krwitmNICFu41ugy7MZjclrmnwp3M@dpg-d3antq7fte5s73dgjgl0-a.frankfurt-postgres.render.com/idan_db',
+  ssl: { rejectUnauthorized: false },
 });
 
 // חיבור ל-DB בענן Render

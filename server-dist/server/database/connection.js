@@ -10,7 +10,7 @@ dotenv.config();
 const isProduction = process.env.NODE_ENV === 'production';
 const databaseUrl = isProduction
     ? process.env.DATABASE_URL
-    : process.env.LOCAL_DATABASE_URL;
+    : 'postgresql://idan_db_user:mh0krwitmNICFu41ugy7MZjclrmnwp3M@dpg-d3antq7fte5s73dgjgl0-a.frankfurt-postgres.render.com/idan_db';
 if (!databaseUrl) {
     throw new Error(`❌ No database URL provided. Make sure ${isProduction ? 'DATABASE_URL' : 'LOCAL_DATABASE_URL'} is set in your .env`);
 }
