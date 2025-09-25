@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from './Header';
-import Sidebar from './Sidebar';
+import { Sidebar } from './Sidebar';
 import ReminderBanner from '../notifications/ReminderBanner';
 import { motion, AnimatePresence } from 'framer-motion';
 
