@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "outDir": "server-dist",
+    "rootDir": ".",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["server/*"]
+    },
+    "types": ["node"],
+    "resolveJsonModule": true
+  },
+  "include": [
+    "server/**/*.ts",
+    "src/middleware/**/*.ts",
+    "src/utils/security.ts"
+  ]
+}

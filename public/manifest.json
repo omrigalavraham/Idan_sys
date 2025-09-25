@@ -1,0 +1,11 @@
+{
+  "name": "אברהם תקשורת - מערכת לניהול לידים",
+  "short_name": "אברהם תקשורת",
+  "description": "מערכת לניהול לידים ומעקב לקוחות - אברהם תקשורת",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e293b",
+  "orientation": "portrait",
+  "icons": []
+}

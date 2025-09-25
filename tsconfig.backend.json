@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "target": "ES2022",
+      "module": "ESNext",
+      "moduleResolution": "Node",
+      "outDir": "./server-dist",
+      "rootDir": ".",
+      "strict": true,
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "skipLibCheck": true
+    },
+    "include": ["server/**/*.ts", "src/utils/**/*.ts", "src/middleware/**/*.ts"],
+    "exclude": ["node_modules", "server-dist", "src/components/**/*", "src/store/**/*", "src/services/**/*", "src/pages/**/*", "src/hooks/**/*"]
+  }
+  

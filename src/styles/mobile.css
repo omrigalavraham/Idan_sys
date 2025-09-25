@@ -1,0 +1,1263 @@
+/* Mobile-first responsive design - Perfect iPhone/Android optimization */
+
+/* Critical iOS and Android fixes */
+@media screen and (max-width: 768px) {
+  /* Perfect viewport handling */
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation;
+    font-size: 16px;
+    height: 100%;
+    height: -webkit-fill-available;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    overscroll-behavior-y: none;
+    padding: 0;
+    margin: 0;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    min-height: 100%;
+    min-height: -webkit-fill-available;
+    width: 100%;
+    overflow-x: hidden;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  #root {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Remove all tap highlights and enable smooth interactions */
+  * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    box-sizing: border-box;
+  }
+
+  /* Allow text selection for inputs and content */
+  input, 
+  textarea, 
+  [contenteditable],
+  .selectable-text {
+    -webkit-user-select: text;
+    -webkit-touch-callout: default;
+  }
+
+  /* Perfect input styling for mobile */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="search"],
+  input[type="date"],
+  input[type="time"],
+  input[type="month"],
+  select,
+  textarea {
+    font-size: 16px !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: white;
+    border: 2px solid #e5e7eb;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    min-height: 56px !important;
+    line-height: 1.4;
+  }
+
+  /* Enhanced focus states for better UX */
+  input:focus,
+  textarea:focus,
+  select:focus {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.15) !important;
+    transform: none !important;
+    background-color: #fafbfc;
+    outline: none;
+  }
+
+  /* Dark mode form fixes */
+  .dark input,
+  .dark textarea,
+  .dark select {
+    background-color: rgb(31 41 55) !important;
+    border-color: rgb(75 85 99) !important;
+    color: white !important;
+  }
+
+  .dark input:focus,
+  .dark textarea:focus,
+  .dark select:focus {
+    background-color: rgb(17 24 39) !important;
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.2) !important;
+  }
+
+  /* Perfect touch targets - Apple HIG compliant */
+  button, 
+  [role="button"],
+  .clickable,
+  a,
+  .touch-target {
+    min-height: 56px !important;
+    min-width: 56px !important;
+    padding: 16px 20px !important;
+    border-radius: 16px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(59, 130, 246, 0.1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+    user-select: none;
+  }
+
+  /* Enhanced touch feedback with haptic-like response */
+  button:active,
+  [role="button"]:active,
+  .touch-target:active {
+    transform: scale(0.96);
+    transition: transform 0.1s ease;
+  }
+
+  /* Beautiful ripple effect */
+  button:active::after,
+  [role="button"]:active::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: perfectRipple 0.5s ease-out;
+    pointer-events: none;
+  }
+
+  @keyframes perfectRipple {
+    to {
+      transform: translate(-50%, -50%) scale(2.5);
+      opacity: 0;
+    }
+  }
+
+  /* Perfect sidebar for mobile */
+  .sidebar-mobile {
+    width: 100vw !important;
+    height: 100vh !important;
+    height: -webkit-fill-available !important;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+    background: white !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .dark .sidebar-mobile {
+    background: rgb(31 41 55) !important;
+  }
+
+  /* Perfect navigation items */
+  .nav-item {
+    padding: 20px 24px !important;
+    border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+    min-height: 72px !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .nav-item:active {
+    background-color: rgba(59, 130, 246, 0.1) !important;
+    transform: scale(0.98) !important;
+  }
+
+  .nav-item.active {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+  }
+
+  /* Perfect header for mobile */
+  .mobile-header {
+    height: 80px !important;
+    padding: 16px 20px !important;
+    background: white !important;
+    border-bottom: 1px solid rgba(0,0,0,0.1) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+    backdrop-filter: blur(20px) !important;
+  }
+
+  .dark .mobile-header {
+    background: rgba(31, 41, 55, 0.95) !important;
+    border-bottom-color: rgba(255,255,255,0.1) !important;
+  }
+
+  /* Perfect menu button */
+  .menu-button {
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 16px !important;
+    background: rgba(59, 130, 246, 0.1) !important;
+    border: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .menu-button:active {
+    background: rgba(59, 130, 246, 0.2) !important;
+    transform: scale(0.94) !important;
+  }
+
+  /* Perfect profile button */
+  .profile-button {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    border: 2px solid rgba(59, 130, 246, 0.2) !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .profile-button:active {
+    transform: scale(0.94) !important;
+    border-color: rgba(59, 130, 246, 0.4) !important;
+  }
+
+  /* Perfect cards for mobile */
+  .lead-card,
+  .customer-card,
+  .task-card {
+    margin: 12px 0 !important;
+    padding: 24px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08) !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .lead-card:active,
+  .customer-card:active,
+  .task-card:active {
+    transform: scale(0.98) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12) !important;
+  }
+
+  /* Perfect action buttons in cards */
+  .card-action-button {
+    width: 52px !important;
+    height: 52px !important;
+    border-radius: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+    border: none !important;
+    background: rgba(0,0,0,0.05) !important;
+  }
+
+  .card-action-button:active {
+    transform: scale(0.9) !important;
+    background: rgba(0,0,0,0.1) !important;
+  }
+
+  .card-action-button.phone {
+    background: rgba(34, 197, 94, 0.1) !important;
+    color: #22c55e !important;
+  }
+
+  .card-action-button.phone:active {
+    background: rgba(34, 197, 94, 0.2) !important;
+  }
+
+  .card-action-button.edit {
+    background: rgba(59, 130, 246, 0.1) !important;
+    color: #3b82f6 !important;
+  }
+
+  .card-action-button.edit:active {
+    background: rgba(59, 130, 246, 0.2) !important;
+  }
+
+  .card-action-button.delete {
+    background: rgba(239, 68, 68, 0.1) !important;
+    color: #ef4444 !important;
+  }
+
+  .card-action-button.delete:active {
+    background: rgba(239, 68, 68, 0.2) !important;
+  }
+
+  /* Perfect modals for mobile */
+  .mobile-modal {
+    width: calc(100vw - 24px) !important;
+    max-width: none !important;
+    margin: 12px !important;
+    border-radius: 24px !important;
+    max-height: calc(100vh - 24px) !important;
+    overflow: hidden !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+  }
+
+  .modal-header {
+    padding: 24px !important;
+    position: sticky !important;
+    top: 0 !important;
+    background: inherit !important;
+    z-index: 10 !important;
+    border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+    backdrop-filter: blur(20px) !important;
+  }
+
+  .modal-body {
+    padding: 24px !important;
+    max-height: calc(100vh - 200px) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .modal-footer {
+    padding: 24px !important;
+    position: sticky !important;
+    bottom: 0 !important;
+    background: inherit !important;
+    border-top: 1px solid rgba(0,0,0,0.08) !important;
+    backdrop-filter: blur(20px) !important;
+  }
+
+  /* Perfect search bar */
+  .search-container {
+    position: relative !important;
+    width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+
+  .search-input {
+    width: 100% !important;
+    padding: 20px 60px 20px 20px !important;
+    border-radius: 16px !important;
+    font-size: 16px !important;
+    border: 2px solid #e5e7eb !important;
+    background: white !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .search-input:focus {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15) !important;
+    transform: translateY(-2px) !important;
+  }
+
+  .search-icon {
+    position: absolute !important;
+    right: 20px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: #9ca3af !important;
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  /* Perfect filter buttons */
+  .filter-button {
+    padding: 16px 24px !important;
+    border-radius: 16px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border: 2px solid #e5e7eb !important;
+    background: white !important;
+    color: #374151 !important;
+    transition: all 0.2s ease !important;
+    min-height: 56px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .filter-button.active {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+    color: white !important;
+    border-color: #3b82f6 !important;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+  }
+
+  .filter-button:active {
+    transform: scale(0.96) !important;
+  }
+
+  /* Perfect status badges */
+  .status-badge {
+    padding: 12px 20px !important;
+    border-radius: 20px !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+  }
+
+  /* Perfect phone links */
+  .phone-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    color: #22c55e !important;
+    text-decoration: none !important;
+    padding: 16px 20px !important;
+    border-radius: 16px !important;
+    background: rgba(34, 197, 94, 0.1) !important;
+    min-height: 56px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+    border: 2px solid rgba(34, 197, 94, 0.2) !important;
+  }
+
+  .phone-link:active {
+    transform: scale(0.96) !important;
+    background: rgba(34, 197, 94, 0.2) !important;
+  }
+
+  /* Perfect form groups */
+  .form-group {
+    margin-bottom: 24px !important;
+  }
+
+  .form-label {
+    margin-bottom: 12px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #374151 !important;
+    display: block !important;
+  }
+
+  .dark .form-label {
+    color: #f3f4f6 !important;
+  }
+
+  /* Perfect grid layouts */
+  .mobile-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 0 !important;
+  }
+
+  .mobile-grid-2 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Perfect spacing system */
+  .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 32px !important;
+  }
+
+  .space-y-4 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 24px !important;
+  }
+
+  .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 12px !important;
+  }
+
+  /* Perfect text sizes */
+  .text-3xl {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+  }
+
+  .text-2xl {
+    font-size: 1.75rem !important;
+    line-height: 1.2 !important;
+    font-weight: 700 !important;
+  }
+
+  .text-xl {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+    font-weight: 600 !important;
+  }
+
+  .text-lg {
+    font-size: 1.25rem !important;
+    line-height: 1.4 !important;
+    font-weight: 600 !important;
+  }
+
+  .text-base {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    font-weight: 500 !important;
+  }
+
+  .text-sm {
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+    font-weight: 500 !important;
+  }
+
+  .text-xs {
+    font-size: 14px !important;
+    line-height: 1.3 !important;
+    font-weight: 500 !important;
+  }
+
+  /* Perfect containers */
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    max-width: 100% !important;
+  }
+
+  /* Perfect scrolling */
+  .overflow-y-auto,
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+  }
+
+  /* Perfect tables for mobile */
+  .mobile-table {
+    width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 0 12px !important;
+  }
+
+  .mobile-table td {
+    padding: 20px !important;
+    background: white !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
+    font-size: 16px !important;
+  }
+
+  /* Perfect dropdowns */
+  .dropdown-menu {
+    width: calc(100vw - 40px) !important;
+    max-height: 70vh !important;
+    border-radius: 20px !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+    margin-top: 12px !important;
+    overflow: hidden !important;
+    backdrop-filter: blur(20px) !important;
+  }
+
+  .dropdown-item {
+    padding: 20px 24px !important;
+    min-height: 64px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .dropdown-item:active {
+    background: rgba(59, 130, 246, 0.1) !important;
+    transform: scale(0.98) !important;
+  }
+
+  /* Perfect tabs */
+  .tab-container {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  .tab-container::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .tab-list {
+    display: flex !important;
+    min-width: max-content !important;
+    gap: 12px !important;
+    padding: 0 20px 20px 20px !important;
+  }
+
+  .tab-button {
+    white-space: nowrap !important;
+    padding: 16px 24px !important;
+    border-radius: 20px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    min-height: 56px !important;
+    border: 2px solid transparent !important;
+    transition: all 0.2s ease !important;
+    background: rgba(0,0,0,0.05) !important;
+    color: #6b7280 !important;
+  }
+
+  .tab-button.active {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+  }
+
+  .tab-button:active {
+    transform: scale(0.96) !important;
+  }
+
+  /* Perfect floating action button */
+  .fab {
+    position: fixed !important;
+    bottom: calc(32px + env(safe-area-inset-bottom)) !important;
+    right: 32px !important;
+    width: 64px !important;
+    height: 64px !important;
+    border-radius: 32px !important;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 12px 32px rgba(59, 130, 246, 0.4) !important;
+    z-index: 1000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .fab:active {
+    transform: scale(0.9) !important;
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.5) !important;
+  }
+
+  /* Perfect stats cards */
+  .stats-card {
+    padding: 24px !important;
+    border-radius: 20px !important;
+    margin-bottom: 20px !important;
+    background: white !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08) !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .stats-card:active {
+    transform: scale(0.98) !important;
+  }
+
+  .stats-number {
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+  }
+
+  .stats-label {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    margin-top: 8px !important;
+  }
+
+  /* Perfect calendar for mobile */
+  .calendar-grid {
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+    gap: 2px !important;
+    background: #f3f4f6 !important;
+    border-radius: 16px !important;
+    padding: 4px !important;
+  }
+
+  .calendar-day {
+    min-height: 80px !important;
+    padding: 12px 8px !important;
+    border-radius: 12px !important;
+    background: white !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+    touch-action: manipulation !important;
+  }
+
+  .calendar-day:active {
+    transform: scale(0.95) !important;
+    background: rgba(59, 130, 246, 0.1) !important;
+  }
+
+  .calendar-day.today {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+  }
+
+  .calendar-event {
+    padding: 6px 8px !important;
+    margin: 2px 0 !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+  }
+
+  /* Perfect notifications */
+  .notification-toast {
+    width: calc(100vw - 32px) !important;
+    max-width: 400px !important;
+    margin: 0 16px !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.15) !important;
+    backdrop-filter: blur(20px) !important;
+  }
+
+  .notification-center {
+    width: calc(100vw - 32px) !important;
+    max-width: 400px !important;
+    left: 16px !important;
+    right: 16px !important;
+    margin: 0 auto !important;
+    border-radius: 20px !important;
+    max-height: 80vh !important;
+    overflow: hidden !important;
+  }
+
+  .notification-item {
+    padding: 20px !important;
+    border-radius: 0 !important;
+    margin-bottom: 0 !important;
+    border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+    min-height: 80px !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .notification-item:active {
+    background: rgba(59, 130, 246, 0.05) !important;
+  }
+
+  /* Perfect loading states */
+  .loading-spinner {
+    width: 40px !important;
+    height: 40px !important;
+    border-width: 4px !important;
+  }
+
+  .loading-overlay {
+    backdrop-filter: blur(10px) !important;
+    background: rgba(255,255,255,0.8) !important;
+  }
+
+  .dark .loading-overlay {
+    background: rgba(0,0,0,0.8) !important;
+  }
+
+  /* Perfect error and success messages */
+  .error-message,
+  .success-message {
+    padding: 20px !important;
+    border-radius: 16px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    margin: 20px 0 !important;
+    text-align: center !important;
+  }
+
+  /* Perfect pagination */
+  .pagination {
+    flex-direction: row !important;
+    gap: 12px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+  }
+
+  .pagination-button {
+    min-width: 56px !important;
+    min-height: 56px !important;
+    border-radius: 16px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+  }
+
+  /* Perfect action button groups */
+  .action-button-group {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 12px !important;
+    width: 100% !important;
+    flex-wrap: wrap !important;
+  }
+
+  .action-button-group button {
+    flex: 1 !important;
+    min-width: 120px !important;
+    justify-content: center !important;
+    min-height: 56px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 16px !important;
+  }
+
+  /* Perfect settings */
+  .settings-section {
+    background: white !important;
+    border-radius: 20px !important;
+    margin-bottom: 20px !important;
+    overflow: hidden !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08) !important;
+  }
+
+  .settings-item {
+    padding: 24px !important;
+    border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+    min-height: 80px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .settings-item:last-child {
+    border-bottom: none !important;
+  }
+
+  /* Perfect toggle switches */
+  .toggle-switch {
+    width: 60px !important;
+    height: 32px !important;
+    border-radius: 16px !important;
+  }
+
+  .toggle-switch::after {
+    width: 28px !important;
+    height: 28px !important;
+    border-radius: 14px !important;
+  }
+
+  /* Perfect charts for mobile */
+  .chart-container {
+    height: 300px !important;
+    margin: 20px 0 !important;
+    padding: 20px !important;
+    background: white !important;
+    border-radius: 20px !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08) !important;
+  }
+
+  /* Perfect profile section */
+  .profile-section {
+    text-align: center !important;
+    padding: 32px 20px !important;
+  }
+
+  .profile-avatar {
+    width: 120px !important;
+    height: 120px !important;
+    margin: 0 auto 20px auto !important;
+    border-radius: 60px !important;
+    border: 4px solid rgba(59, 130, 246, 0.2) !important;
+    overflow: hidden !important;
+  }
+
+  .profile-name {
+    font-size: 1.75rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .profile-role {
+    font-size: 16px !important;
+    color: #6b7280 !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* Perfect attendance modal */
+  .attendance-modal {
+    width: calc(100vw - 24px) !important;
+    max-width: none !important;
+    margin: 12px !important;
+    border-radius: 24px !important;
+    max-height: calc(100vh - 24px) !important;
+    overflow: hidden !important;
+  }
+
+  .attendance-button {
+    width: 100% !important;
+    padding: 20px !important;
+    border-radius: 16px !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    min-height: 64px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .attendance-button.clock-in {
+    background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+    color: white !important;
+    box-shadow: 0 8px 24px rgba(34, 197, 94, 0.3) !important;
+  }
+
+  .attendance-button.clock-out {
+    background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+    color: white !important;
+    box-shadow: 0 8px 24px rgba(239, 68, 68, 0.3) !important;
+  }
+
+  /* Perfect task kanban */
+  .task-kanban {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .task-column {
+    width: 100% !important;
+    min-height: 200px !important;
+    background: #f8fafc !important;
+    border-radius: 20px !important;
+    padding: 20px !important;
+  }
+
+  .task-card {
+    padding: 20px !important;
+    border-radius: 16px !important;
+    margin-bottom: 16px !important;
+    background: white !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+  }
+
+  /* Perfect reports */
+  .report-card {
+    padding: 24px !important;
+    border-radius: 20px !important;
+    margin-bottom: 20px !important;
+    background: white !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08) !important;
+  }
+
+  /* Perfect customer cards */
+  .customer-card {
+    padding: 24px !important;
+    border-radius: 20px !important;
+    margin-bottom: 20px !important;
+    background: white !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08) !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+  }
+
+  /* Perfect user management */
+  .user-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .user-card {
+    padding: 24px !important;
+    border-radius: 20px !important;
+    background: white !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08) !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+  }
+
+  /* Perfect client management */
+  .client-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .client-card {
+    padding: 24px !important;
+    border-radius: 20px !important;
+    background: white !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08) !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+  }
+
+  /* Perfect safe areas for iPhone */
+  .safe-top {
+    padding-top: env(safe-area-inset-top) !important;
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom) !important;
+  }
+
+  .safe-left {
+    padding-left: env(safe-area-inset-left) !important;
+  }
+
+  .safe-right {
+    padding-right: env(safe-area-inset-right) !important;
+  }
+
+  /* Perfect sticky elements */
+  .sticky-header {
+    position: sticky !important;
+    top: env(safe-area-inset-top) !important;
+    z-index: 100 !important;
+    background: rgba(255,255,255,0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+  }
+
+  .dark .sticky-header {
+    background: rgba(31, 41, 55, 0.95) !important;
+    border-bottom-color: rgba(255,255,255,0.08) !important;
+  }
+
+  /* Perfect swipe gestures */
+  .swipeable {
+    touch-action: pan-x !important;
+    user-select: none !important;
+  }
+
+  /* Perfect pull to refresh */
+  .pull-to-refresh {
+    overscroll-behavior-y: contain !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* Perfect keyboard handling */
+  .keyboard-avoiding {
+    padding-bottom: env(keyboard-inset-height, 0px) !important;
+    transition: padding-bottom 0.3s ease !important;
+  }
+
+  /* Perfect focus management */
+  .focus-trap {
+    outline: none !important;
+  }
+
+  .focus-visible {
+    outline: 3px solid rgba(59, 130, 246, 0.5) !important;
+    outline-offset: 2px !important;
+  }
+
+  /* Perfect animations */
+  .mobile-slide-up {
+    animation: mobileSlideUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  }
+
+  @keyframes mobileSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .mobile-fade-in {
+    animation: mobileFadeIn 0.3s ease-out !important;
+  }
+
+  @keyframes mobileFadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Perfect haptic feedback simulation */
+  .haptic-light:active {
+    animation: hapticLight 0.1s ease !important;
+  }
+
+  .haptic-medium:active {
+    animation: hapticMedium 0.15s ease !important;
+  }
+
+  .haptic-heavy:active {
+    animation: hapticHeavy 0.2s ease !important;
+  }
+
+  @keyframes hapticLight {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(0.98); }
+  }
+
+  @keyframes hapticMedium {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+  }
+
+  @keyframes hapticHeavy {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(0.92); }
+  }
+
+  /* Perfect dark mode for mobile */
+  .dark .mobile-optimized {
+    background: rgb(17 24 39) !important;
+    color: white !important;
+  }
+
+  .dark .card {
+    background: rgb(31 41 55) !important;
+    border-color: rgb(75 85 99) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3) !important;
+  }
+
+  .dark .modal-content {
+    background: rgb(31 41 55) !important;
+    border-color: rgb(75 85 99) !important;
+  }
+
+  /* Perfect accessibility for mobile */
+  .sr-only-mobile {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  /* Perfect performance optimizations */
+  .will-change-transform {
+    will-change: transform !important;
+  }
+
+  .will-change-opacity {
+    will-change: opacity !important;
+  }
+
+  .gpu-accelerated {
+    transform: translateZ(0) !important;
+    backface-visibility: hidden !important;
+    perspective: 1000px !important;
+  }
+}
+
+/* Perfect landscape orientation */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .modal-content {
+    max-height: calc(100vh - 40px) !important;
+    overflow-y: auto !important;
+  }
+
+  .calendar-day {
+    min-height: 60px !important;
+  }
+
+  .nav-item {
+    min-height: 60px !important;
+    padding: 16px 24px !important;
+  }
+}
+
+/* Perfect iPhone X and newer */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available !important;
+  }
+
+  body {
+    min-height: -webkit-fill-available !important;
+  }
+
+  #root {
+    min-height: -webkit-fill-available !important;
+  }
+
+  .ios-safe-area {
+    padding-top: env(safe-area-inset-top) !important;
+    padding-bottom: env(safe-area-inset-bottom) !important;
+    padding-left: env(safe-area-inset-left) !important;
+    padding-right: env(safe-area-inset-right) !important;
+  }
+}
+
+/* Perfect Android optimizations */
+@media screen and (max-width: 768px) {
+  .android-viewport-fix {
+    height: 100vh !important;
+    height: calc(var(--vh, 1vh) * 100) !important;
+  }
+
+  /* Android Chrome address bar handling */
+  .android-chrome-fix {
+    min-height: 100vh !important;
+    min-height: calc(var(--vh, 1vh) * 100) !important;
+  }
+}
+
+/* Perfect high DPI displays */
+@media screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+  .high-dpi-text {
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+  }
+
+  .high-dpi-icon {
+    image-rendering: -webkit-optimize-contrast !important;
+    image-rendering: crisp-edges !important;
+  }
+}
+
+/* Perfect RTL support for mobile */
+@media screen and (max-width: 768px) {
+  .rtl-mobile {
+    direction: rtl !important;
+  }
+
+  .ltr-mobile {
+    direction: ltr !important;
+  }
+
+  .space-x-reverse-mobile > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1 !important;
+  }
+}
+
+/* Perfect print styles for mobile */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+}
